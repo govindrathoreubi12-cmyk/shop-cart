@@ -1,5 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-hot-toast";
+import { addToCart } from "../redux/cartSlice"; // path correct hona chahiye
+
+
 
 import { add, remove } from "../redux/cartSlice"; // Import actions
 
