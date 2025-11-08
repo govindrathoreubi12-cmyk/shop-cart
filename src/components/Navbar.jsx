@@ -1,12 +1,13 @@
 import { useSelector } from "react-redux";
 import { FaShoppingCart } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { categories } from "../data/extendedData";
 
 const Navbar = () => {
-  const cart = useSelector((state) => state.cart); // Access cart from Redux state
+  const cart = useSelector((state) => state.cart);
 
   return (
-    <div>
+    <div className="fixed top-0 left-0 right-0 bg-slate-900 z-50">
       <nav className="flex justify-between items-center h-20 max-w-6xl mx-auto">
         <NavLink to="/">
           <div>
@@ -17,6 +18,11 @@ const Navbar = () => {
           <NavLink to="/">
             <p>Home</p>
           </NavLink>
+          {categories.map((category) => (
+            <NavLink key={category} to={`/category/${category.replace("'", "").replace(" ", "-")}`}>
+              <p className="capitalize">{category}</p>
+            </NavLink>
+          ))}
           <NavLink to="/cart">
             <div className="relative">
               <FaShoppingCart className="text-2xl" />
@@ -31,6 +37,6 @@ const Navbar = () => {
       </nav>
     </div>
   );
-};
+}
 
 export default Navbar;

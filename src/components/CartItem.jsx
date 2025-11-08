@@ -2,6 +2,7 @@ import toast from 'react-hot-toast';
 import {FcDeleteDatabase} from 'react-icons/fc'
 import { useDispatch } from 'react-redux';
 import {MdDeleteSweep} from "react-icons/md";
+import { remove } from '../redux/CartSlice';
 const CartItem = ({item, itemIndex}) => {
   const dispatch = useDispatch(); 
 

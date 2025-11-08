@@ -1,10 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-hot-toast";
-import { addToCart } from "../redux/cartSlice"; // path correct hona chahiye
-
-
-
-import { add, remove } from "../redux/cartSlice"; // Import actions
+import { add, remove } from "../redux/cartSlice";
 
 
 const Product = ({ post }) => {
@@ -29,8 +25,8 @@ const Product = ({ post }) => {
       <div>
         <p className="w-40 text-gray-400 font-normal text-[10px] text-left">{post.description.split(" ").slice(0,10).join(" ") + "... "}</p>
       </div>
-      <div >
-        <img src={post.image} alt={post.title}  className="w-full h-full "/> 
+      <div className="h-[180px]">
+        <img src={post.image} alt={post.title} className="h-[180px] w-full object-contain"/> 
       </div>
       <div className="flex justify-between gap-12 ">
        <div>
